@@ -1,4 +1,5 @@
 import React from "react";
+import CartItem from "../cart-item/cart-item.component";
 
 import CustomButton from "../custom-button/custom-button.component";
 
