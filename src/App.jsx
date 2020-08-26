@@ -20,7 +20,13 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
+  // call APIs to retrevie data (or any calls to server) here!
+  // add event listeners here!
+  // adding event handlers to document or window objects must be done directly (not here!)
   componentDidMount() {
+    // calling an API here, then setState() with incoming API data
+    // updates the state once API data arrives
+    // and this state change re-renders the component
     const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -38,7 +44,7 @@ class App extends React.Component {
       setCurrentUser(userAuth);
     });
   }
-
+  //remove event listeners here!
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
@@ -76,7 +82,4 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

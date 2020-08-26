@@ -1,3 +1,5 @@
+// selects items from Redux store
+
 import { createSelector } from "reselect";
 
 const selectCart = state => state.cart;
