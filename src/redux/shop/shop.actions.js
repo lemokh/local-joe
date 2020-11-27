@@ -19,16 +19,8 @@ export const fetchCollectionsFailure = errorMessage => ({
 });
 
 // thunk action
-export const fetchCollectionsStartAsync = () => {
-  return dispatch => {
-    const collectionRef = firestore.collection("collections");
-    dispatch(fetchCollectionsStart());
+// export const fetchCollectionsStartAsync = () => {
+//   return dispatch => {
 
-    collectionRef.get().then(snapshot => {
-      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-      dispatch(fetchCollectionsSuccess(collectionsMap)).catch(error =>
-        fetchCollectionsFailure(error.message)
-      );
-    });
-  };
-};
+//   };
+// };
