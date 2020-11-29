@@ -19,7 +19,7 @@ export const fetchCollectionsFailure = errorMessage => ({
 });
 
 // thunk action
-// export const fetchCollectionsStartAsync = () => {
+// extport const fetchCollectionsStartAsync = () => {
 //   return dispatch => {
 
 //   };
