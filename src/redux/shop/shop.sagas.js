@@ -11,7 +11,7 @@ import {
 
 export function* fetchCollectionsAsync() {
   //  all generator functions must yield
-  yield console.log("I am fired");
+  yield console.log("fetchCollectionsAsync fired");
   try {
     const collectionRef = firestore.collection("collections");
     const snapshot = yield collectionRef.get();
